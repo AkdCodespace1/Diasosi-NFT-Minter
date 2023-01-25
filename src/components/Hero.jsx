@@ -33,7 +33,7 @@ const Hero = () => {
                   <button className="shadow-xl shadow-black text-white
                   bg-[#e32970] hover:bg-[#bd25] p-2
                   rounded-full cursor-pointer my-4"
-                  onClick={onMintNF}
+                  onClick={onMintNFT}
                   >
                     Mint NFT
                     </button>
