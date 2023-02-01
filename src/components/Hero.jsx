@@ -2,18 +2,20 @@ import github from '../assets/github_icon.png'
 import facebook from '../assets/facebook_icon.png'
 import twitter from '../assets/twitter_icon.png'
 import linkedIn from '../assets/linkedIn_icon.png'
-import { setAlert, setGlobalState } from '../store'
+import { setAlert, setGlobalState, useGlobalState } from '../store'
 import { payToMint } from '../Diasosi'
 
 const Hero = () => {
+  const [nfts] = useGlobalState('nfts')
   const onMintNFT = async () => {
-    setGlobalState('Loading', {
-      show: 'Minting new NFT to your account.'
-    })
+    // setGlobalState('Loading', {
+    //   show: true,
+    //   msg: 'Minting new NFT to your account.',
+    // })
 
     await payToMint()
-      .then(() => setAlert('Minting successful...', 'green'))
-      .catch(() => setGlobalState('loading', {show: false, msg: ''}))
+      // .then(() => setAlert('Minting successful...', 'green'))
+      // .catch(() => setGlobalState('loading', {show: false, msg: ''}))
   }
   
   return (
@@ -68,10 +70,10 @@ const Hero = () => {
                       </a>
                     </ul>
 
-                    <div className='shadow-xl shadow-black flex justify-center
+                    <div className='shadow-xl shadow-black flex flex-row justify-center
                     items-center w-10 h-10 rounded-full bg-[#bd255f] cursor-pointer
                     p-3 ml-4 text-white hover:bg-black hover:text-white'>
-                      <span className='text-sm font-bold'>50</span>
+                      <span className='text-sm font-bold'>{nfts.length}/50</span>
                       
                     </div>
                     <div className='text-sm bg-gradient justify-center ml-4

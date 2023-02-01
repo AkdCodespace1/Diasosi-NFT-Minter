@@ -102,8 +102,8 @@ const isWallectConnected = async () => {
 
 
 const reportError = (error) => {
-    console.log(error.message)
-    throw new Error('No ethereum object.') 
+    // console.log(error.message)
+    // throw new Error('No ethereum object.') 
 }
 
 export {

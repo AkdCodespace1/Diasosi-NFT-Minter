@@ -2,8 +2,10 @@ import { useGlobalState } from '../store'
 import { FaRegTimesCircle } from 'react-icons/fa'
 import { BsCheck2Circle } from 'react-icons/bs'
 
+
 const Alert = () => {
   const [alert] = useGlobalState('alert')
+  
   return (
     <div
       className={`fixed top-0 left-0 w-screen h-screen

@@ -1,4 +1,5 @@
 import ethlogo from '../assets/ethlogo.png'
+
 const Footer = () => {
   return (
     <div className="w-full flex md:justify-center justify-between

@@ -5,11 +5,14 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Loading from './components/Loading'
-import { isWallectConnected } from './Diasosi'
+import { isWallectConnected, loadNfts } from './Diasosi'
+import { useGlobalState } from './store'
 
 const App = () => {
-  useEffect(() => {
-    isWallectConnected().then(() => console.log("Blockchain Loaded"))
+  const [nfts] = useGlobalState('nfts')
+  useEffect(async () => {
+    await isWallectConnected().then(() => console.log("Blockchain Loaded"))
+    await loadNfts()
   }, [])
   return (
     <div className="min-h-screen">
@@ -17,13 +20,12 @@ const App = () => {
         <Header />
         <Hero /> 
       </div>
-        <Artworks /> 
+        <Artworks artworks={nfts} /> 
         <Footer /> 
+        <Alert />
          <Loading /> 
-         <Alert />
-    </div>
+      </div>
   )
 }
 
 export default App
- 

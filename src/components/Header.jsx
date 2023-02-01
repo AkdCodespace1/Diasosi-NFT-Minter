@@ -14,7 +14,7 @@ const Header = () => {
         <img 
           className="w-8 cursor-pointer" 
           src={ethlogo} 
-          alt="Adulam Logo" 
+          alt="Diasosi Logo" 
          />
         <span className="text-white text-2xl ml-2">Diasosi NFT</span>
       </div>
