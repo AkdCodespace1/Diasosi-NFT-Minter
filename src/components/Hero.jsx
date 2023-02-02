@@ -19,13 +19,13 @@ const Hero = () => {
   }
   
   return (
-    <div className="bg-url[('https://cdn.pixabay.com/photo/2022/03/01/02/51/galaxy-7040416_960_720.png')]
+    <div className="bg-[url('https://www.pexels.com/photo/illuminated-art-gallery-with-neon-lights-12389879.jpeg')]
     bg-no-repeat bg-cover">
             <div className="flex flex-col justify-center items-center 
             mx-auto py-10">
                 <h1 className="text-white text-5xl font-bold text-center">
                   Dsos Varieties <br />
-                  <span className="text-gradient">NFTs</span> Gallery
+                  <span className="text-gradient">NFTs Gallery</span> 
                   </h1>
 
                   <p className="text-white font-semibold text-sm mt-3">
