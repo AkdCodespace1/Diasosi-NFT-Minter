@@ -518,8 +518,8 @@
       ]
     },
     "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\src\\contracts\\Diasosi.sol": {
-      "lastModificationDate": 1675215594829,
-      "contentHash": "71c8944cfc8a50497cc5e4c2f73f5a81",
+      "lastModificationDate": 1678139508848,
+      "contentHash": "86161164dd394c05dd22a7036cf4ae35",
       "sourceName": "src/contracts/Diasosi.sol",
       "solcConfig": {
         "version": "0.8.11",
@@ -545,14 +545,18 @@
         }
       },
       "imports": [
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
-        "@openzeppelin/contracts/access/Ownable.sol"
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        "@openzeppelin/contracts/security/Pausable.sol",
+        "@openzeppelin/contracts/access/Ownable.sol",
+        "@openzeppelin/contracts/utils/Counters.sol"
       ],
       "versionPragmas": [
-        ">=0.7.0 <0.9.0"
+        "^0.8.9"
       ],
       "artifacts": [
-        "Diasosi"
+        "MyToken"
       ]
     },
     "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\access\\Ownable.sol": {
@@ -593,7 +597,7 @@
       ]
     },
     "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721Enumerable.sol": {
-      "lastModificationDate": 1674217921452,
+      "lastModificationDate": 1678047087451,
       "contentHash": "212e86880d210b6cac8c3eb0cd6b1fad",
       "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
       "solcConfig": {
@@ -703,8 +707,8 @@
       ]
     },
     "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\ERC721.sol": {
-      "lastModificationDate": 1674217921058,
-      "contentHash": "190f627b9302b9602d3a313e28205cc5",
+      "lastModificationDate": 1678047087425,
+      "contentHash": "f7f4f78c31f28534852e5c56000a25af",
       "sourceName": "@openzeppelin/contracts/token/ERC721/ERC721.sol",
       "solcConfig": {
         "version": "0.8.11",
@@ -1031,6 +1035,115 @@
       ],
       "artifacts": [
         "Math"
+      ]
+    },
+    "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\token\\ERC721\\extensions\\ERC721URIStorage.sol": {
+      "lastModificationDate": 1678047087520,
+      "contentHash": "8af32effd0536e2971ff8496812a5016",
+      "sourceName": "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC721.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ERC721URIStorage"
+      ]
+    },
+    "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\security\\Pausable.sol": {
+      "lastModificationDate": 1678047088287,
+      "contentHash": "25c8108f36fdd472bc78d4c4af240c11",
+      "sourceName": "@openzeppelin/contracts/security/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\node_modules\\@openzeppelin\\contracts\\utils\\Counters.sol": {
+      "lastModificationDate": 1678047086625,
+      "contentHash": "74654e3ae5d7f39555055dfe244dab7a",
+      "sourceName": "@openzeppelin/contracts/utils/Counters.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Counters"
       ]
     }
   }

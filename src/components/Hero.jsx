@@ -3,7 +3,7 @@ import facebook from '../assets/facebook_icon.png'
 import twitter from '../assets/twitter_icon.png'
 import linkedIn from '../assets/linkedIn_icon.png'
 import { setAlert, setGlobalState, useGlobalState } from '../store'
-import { payToMint } from '../Diasosi'
+import { safeMint } from '../Diasosi'
 
 const Hero = () => {
   const [nfts] = useGlobalState('nfts')
@@ -13,7 +13,7 @@ const Hero = () => {
     //   msg: 'Minting new NFT to your account.',
     // })
 
-    await payToMint()
+    await safeMint()
       // .then(() => setAlert('Minting successful...', 'green'))
       // .catch(() => setGlobalState('loading', {show: false, msg: ''}))
   }

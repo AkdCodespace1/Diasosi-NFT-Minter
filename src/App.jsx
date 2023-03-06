@@ -11,7 +11,7 @@ import { useGlobalState } from './store'
 const App = () => {
   const [nfts] = useGlobalState('nfts')
   useEffect(async () => {
-    await isWallectConnected().then(() => console.log("Blockchain Loaded"))
+    await isWallectConnected().then(() => console.log("Blockchain Running"))
     await loadNfts()
   }, [])
   return (

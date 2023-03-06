@@ -57,20 +57,22 @@ const isWallectConnected = async () => {
         }
     }
 
-    const payToMint = async () => {
+    const safeMint = async () => {
         try {
             if (!ethereum) return alert('Please install Metamask')
             const connectedAccount = getGlobalState('connectedAccount')
             const contract = getEtheriumContract()
-            const amount = ethers.utils.parseEther('0.001')
-
-            await contract.payToMint({
-                from: connectedAccount,
-                value: amount._hex,
-        })
-
+           // const amount = ethers.utils.parseEther('0.001')
+            console.log(contract)
+            const base_uri = 'https://ipfs.io/ipfs/QmTWbe9wDns7aqZQNCuWh5PqybGbBF91kngC5Zf8qmCoyg/'
+            const result = await contract.safeMint(
+                connectedAccount,
+              base_uri
+        )
+            console.log('result', result)
             windows.location.reload()
     }       catch (error) {
+            console.log(error.message)
             reportError(error)
         }
     }
@@ -81,7 +83,7 @@ const isWallectConnected = async () => {
 
         const contract = getEtheriumContract()
         const nfts = await contract.getAllNFTs()
-
+            console.log('nfts', nfts)
         setGlobalState('nfts', structuredNfts(nfts))
     }   catch (error) {
         reportError(error)
@@ -109,6 +111,6 @@ const reportError = (error) => {
 export {
     isWallectConnected,
     connectWallet,
-    payToMint,
+    safeMint,
     loadNfts
     }
