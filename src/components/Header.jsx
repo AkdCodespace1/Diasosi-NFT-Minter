@@ -38,7 +38,7 @@ const Header = () => {
   </button>
   ) : (
         <button
-          className="shadow-xl shadow-black text-white
+          className="shadow-xl font-semibold shadow-black text-black
           bg-[#e32970] hover:bg-[#bd25] md:text-xs p-2
           rounded-full cursor-pointer"
           onClick={connectWallet}

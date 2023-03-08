@@ -19,20 +19,20 @@ const Hero = () => {
   }
   
   return (
-    <div className="bg-[url('https://www.pexels.com/photo/illuminated-art-gallery-with-neon-lights-12389879.jpeg')]
+    <div className="bg-[url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]
     bg-no-repeat bg-cover">
             <div className="flex flex-col justify-center items-center 
             mx-auto py-10">
-                <h1 className="text-white text-5xl font-bold text-center">
+                <h1 className="text-black text-5xl font-bold text-center">
                   Dsos Varieties <br />
-                  <span className="text-gradient">NFTs Gallery</span> 
+                  <span className="text-black">NFTs Gallery</span> 
                   </h1>
 
-                  <p className="text-white font-semibold text-sm mt-3">
+                  <p className="text-black font-semibold font-bold text-sm mt-3">
                     Collections of classic aesthetic NFTs
                   </p>
 
-                  <button className="shadow-xl shadow-black text-white
+                  <button className="shadow-xl font-semibold shadow-black text-black
                   bg-[#e32970] hover:bg-[#bd25] p-2
                   rounded-full cursor-pointer my-4"
                   onClick={onMintNFT}
@@ -40,7 +40,7 @@ const Hero = () => {
                     Mint NFT
                     </button>
 
-                    <p className="text-white text-sm font-medium text-center">
+                    <p className="text-black text-sm font-bold font-medium text-center">
                       This work is more like an humanitarian endeavour, <br />
                       targeted at young gifted hands and otherwise helpless <br />
                       talented artists who does not have the priviledge of
@@ -48,36 +48,8 @@ const Hero = () => {
                       prowess through their <br /> creative work of art.   
                     </p>
 
-                    <ul 
-                      className='flex flex-row justify-center space-x2
-                    items-center my-4'
-                    >
-                      <a className='bg-white hover:scale-50 transition-all 
-                      duration-75 delay-75 rounded-full mx-2' href="#">
-                          <img className='w-7 h-7 ' src={facebook} alt="Github" />
-                      </a>
-                      <a className='bg-white hover:scale-50 transition-all 
-                      duration-75 delay-75 rounded-full mx-2' href="#">
-                          <img className='w-7 h-7 ' src={twitter} alt="Github" />
-                      </a>
-                      <a className='bg-white hover:scale-50 transition-all 
-                      duration-75 delay-75 rounded-full mx-2' href="#">
-                          <img className='w-7 h-7 ' src={linkedIn} alt="Github" />
-                      </a>
-                      <a className='bg-white hover:scale-50 transition-all 
-                      duration-75 delay-75 rounded-full mx-2' href="#">
-                          <img className='w-7 h-7 ' src={github} alt="Github" />
-                      </a>
-                    </ul>
-
-                    <div className='shadow-xl shadow-black flex flex-row justify-center
-                    items-center w-10 h-10 rounded-full bg-[#bd255f] cursor-pointer
-                    p-3 ml-4 text-white hover:bg-black hover:text-white'>
-                      <span className='text-sm font-bold'>{nfts.length}/50</span>
-                      
-                    </div>
-                    <div className='text-sm bg-gradient justify-center ml-4
-                    rounded-full text-white'>NFT counter</div>
+                    {/* <div className='text-sm bg-gradient justify-center ml-4
+                    rounded-full text-white'>NFT counter</div> */}
             </div>
     </div>
   )

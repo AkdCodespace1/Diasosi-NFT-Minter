@@ -64,7 +64,7 @@ const isWallectConnected = async () => {
             const contract = getEtheriumContract()
            // const amount = ethers.utils.parseEther('0.001')
             console.log(contract)
-            const base_uri = 'https://ipfs.io/ipfs/QmTWbe9wDns7aqZQNCuWh5PqybGbBF91kngC5Zf8qmCoyg/'
+            const base_uri = 'https://ipfs.best-practice.se/ipfs/QmcjMjuYofQMrFRvCYjJ3hA9heG7PyRv5sEfroNWn7auQs'
             const result = await contract.safeMint(
                 connectedAccount,
               base_uri
