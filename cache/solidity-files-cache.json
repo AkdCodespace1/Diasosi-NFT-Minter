@@ -518,8 +518,8 @@
       ]
     },
     "C:\\Users\\Akande\\Desktop\\Personal\\Diasosi-NFT-Minter\\src\\contracts\\Diasosi.sol": {
-      "lastModificationDate": 1678139508848,
-      "contentHash": "86161164dd394c05dd22a7036cf4ae35",
+      "lastModificationDate": 1679919472301,
+      "contentHash": "5bbc208bc134b360143076aea7996400",
       "sourceName": "src/contracts/Diasosi.sol",
       "solcConfig": {
         "version": "0.8.11",

@@ -18,7 +18,7 @@ const getEtheriumContract = () => {
    
         return contract
     } else {
-    return getGlobalState('contract') 
+        return getGlobalState('contract') 
     }
 }
 
@@ -53,7 +53,7 @@ const isWallectConnected = async () => {
             const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
             setGlobalState('connectedAccount', accounts[0])
         } catch (error) {
-        reportError(error)
+            reportError(error)
         }
     }
 
@@ -64,10 +64,10 @@ const isWallectConnected = async () => {
             const contract = getEtheriumContract()
            // const amount = ethers.utils.parseEther('0.001')
             console.log(contract)
-            const base_uri = 'https://ipfs.best-practice.se/ipfs/QmcjMjuYofQMrFRvCYjJ3hA9heG7PyRv5sEfroNWn7auQs'
-            const result = await contract.safeMint(
-                connectedAccount,
-              base_uri
+           // const base_uri = 'https://ipfs.io/ipfs/QmTWbe9wDns7aqZQNCuWh5PqybGbBF91kngC5Zf8qmCoyg/'
+            const result = await contract.clickToMint(
+            //   connectedAccount,
+            //  base_uri
         )
             console.log('result', result)
             windows.location.reload()

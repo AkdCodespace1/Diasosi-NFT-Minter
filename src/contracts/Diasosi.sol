@@ -12,10 +12,6 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownabl
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdCounter;
-    string public baseImage = ".webp";
-    string public baseExtension = ".json";
-    uint256 MAX_SUPPLY = 100000;
-
 
     using Strings for uint256;
 
@@ -37,6 +33,10 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownabl
     }
 
     mintSale[] mintedNFT;
+
+    string public baseImage = ".webp";
+    string public baseExtension = ".json";
+    uint256 MAX_SUPPLY = 1000;
     
 
     constructor(
@@ -54,33 +54,35 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownabl
         _unpause();
     }
 
-    function safeMint(string memory uri) public   {
+    function clickToMint() public   {
         
         require(_tokenIdCounter.current() <= MAX_SUPPLY, "Max. supply reached");
         require(!paused(), "maintenance ongoing");
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
-        _safeMint(msg.sender, tokenId);
-        _setTokenURI(tokenId, uri);
+        _safeMint(msg.sender, tokenId++);
+        // _setTokenURI(tokenId++, tokenURI(tokenId));
 
 
          mintedNFT.push(
             mintSale(
-                tokenId,
-                msg.sender,
-                tokenURI(tokenId),
-                block.timestamp
+            tokenId,
+            msg.sender,
+            convertToImage(tokenId++),
+            block.timestamp
             )
          );
-          emit onSale(tokenId, msg.sender,  tokenURI(tokenId), block.timestamp);
+          emit onSale(tokenId, msg.sender,  tokenURI(tokenId++), block.timestamp);
     }
 
-    function toImage(uint256 tokenId) internal view returns (string memory) {
-        string memory currentBaseURI = _baseURI();
-        return bytes(currentBaseURI).length > 0
-            ? string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseImage))
-            : "";
+   function convertToImage(uint256 tokenId) internal view returns (string memory) {
+    string memory currentBaseURI = _baseURI();
+    if (bytes(currentBaseURI).length == 0) {
+        return "";
     }
+    return string(abi.encodePacked(currentBaseURI, tokenId.toString(), baseImage));
+}
+
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
         internal
@@ -105,7 +107,16 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownabl
         override(ERC721, ERC721URIStorage)
         returns (string memory)
     {
-        return super.tokenURI(tokenId);
+        require(
+            _exists(tokenId),
+            "ERC721Metadata: URI does not existent token"
+        );
+
+        string memory _newBaseURI = _baseURI();
+        if (bytes(_newBaseURI).length == 0) {
+            return "";
+    }
+        return string(abi.encodePacked(_newBaseURI, tokenId.toString(), baseExtension));
     }
 
     function supportsInterface(bytes4 interfaceId)
@@ -119,4 +130,16 @@ contract MyToken is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownabl
     function getAllNFTs() public view returns (mintSale[] memory) {
         return mintedNFT;
     }
+
+    //Get all nfts  
+   // function getAllNFTs() public view returns (saleStruct[] memory) {
+       //return minted;
+    //}
+
+    //Get specific NFT
+    //function payTo(address to, uint256 amount) public onlyOwner {
+        //(bool success, ) = payable(to).call{value: amount}("");
+       // require(success);
+    //}
 }
+////

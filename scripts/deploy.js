@@ -2,7 +2,7 @@ const { ethers } = require('hardhat')
 const fs = require('fs')
 
 async function main() {
-  const base_uri = 'https://ipfs.best-practice.se/ipfs/QmcjMjuYofQMrFRvCYjJ3hA9heG7PyRv5sEfroNWn7auQs'
+  const base_uri = 'https://ipfs.io/ipfs/QmTWbe9wDns7aqZQNCuWh5PqybGbBF91kngC5Zf8qmCoyg/'
   const Contract = await ethers.getContractFactory('Diasosi')
   const contract = await Contract.deploy('Diasosi NFT', 'DSOS', base_uri)
 

@@ -1,12 +1,12 @@
 import ethlogo from '../assets/ethlogo.png'
 import { useEffect, useState } from 'react'
+import { useGlobalState } from '../store'
 
 
 
 const Artworks = ({ artworks }) => {    
    const [end, setEnd] = useState(4)
    const [count] = useState(4) 
-
    const [nfts, setNfts] = useState([]) 
 
    const getNfts = () => {
@@ -24,24 +24,27 @@ const Artworks = ({ artworks }) => {
 
             <div className='flex flex-wrap justify-center items-center mt-4'>
               {nfts.map((nft, i) => (
-              <a
-              key={i}
+              <img
               href={nft.url}
-              target="_blank" 
+              target="_blank"
+              key={i}
               
-                  className={`relative shadow-xl shadow-black p-3
+              
+                   className={`relative shadow-xl shadow-black p-3
                        bg-white rounded-lg item w-64 h-64 object-contain 
                       bg-no-repeat bg-cover overflow-hidden mr-2 mb-2 
                       cursor-pointer transition-all duration-75 delay-100
                       hover:shadow-[#bd2f]`}
-                style={{backgroundImage: `url(${nft.imageURI})` }}>
-
+                // style={{backgroundImage: `url(${nft.imageURL})` }}>
+               // style={{backgroundImage: `url(${base_uri})` }}
+                  style={{backgroundImage: 'url(' + nft.imageURL + ')'}}>
+                
                     <div 
                       className='absolute bottom-0 left-0 right-0 
                           flex flex-row justify-between items-center label-gradient
                           p-2 w-full text-white text-sm'>
 
-                      <p>Diasosi NFT no.{nft.id}</p>
+                      <p>{`Diasosi NFT no.${nft.id}`}</p>
                         
                         <div className='flex justify-center items-center space-x-2'>
                           <img 
@@ -50,13 +53,14 @@ const Artworks = ({ artworks }) => {
                            alt="Diasosi logo" 
                            
                           />
-                          {nft.cost}
+                          //{nft.cost}
                         </div>
-                    </div>
-                </a>))}
+                        </div>
+                        </img>
+                ))}
             </div>
 
-            <div className='flex justify-center items-center mx-auto mt-4'>
+            <div className='flex flex-row justify-center items-center mx-auto mt-4'>
               {artworks.length > 0 && artworks.length > nfts.lenth ? (
                 <button 
                   className='shadow-xl shadow-black text-white 
@@ -65,9 +69,9 @@ const Artworks = ({ artworks }) => {
                   onClick={() => setEnd(end + count)}
                 >
                   More NFTs</button>
-              ) : null}
-                
-            </div>
+           
+           ) : null}
+           </div>
        </div>
     </div>
   )

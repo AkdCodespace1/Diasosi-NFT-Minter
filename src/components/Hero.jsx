@@ -1,7 +1,3 @@
-import github from '../assets/github_icon.png'
-import facebook from '../assets/facebook_icon.png'
-import twitter from '../assets/twitter_icon.png'
-import linkedIn from '../assets/linkedIn_icon.png'
 import { setAlert, setGlobalState, useGlobalState } from '../store'
 import { safeMint } from '../Diasosi'
 
@@ -10,7 +6,7 @@ const Hero = () => {
   const onMintNFT = async () => {
     // setGlobalState('Loading', {
     //   show: true,
-    //   msg: 'Minting new NFT to your account.',
+    //   msg: 'Minting your NFT into your wallet.',
     // })
 
     await safeMint()
@@ -47,9 +43,16 @@ const Hero = () => {
                       showcasing <br /> their products and excellent cerebral 
                       prowess through their <br /> creative work of art.   
                     </p>
+                      <div
+                        className='shadow-xl shadow-black flex justify-center
+                            items-center w-10 h-10 rounded-full bg-black
+                            cursor-pointer p-3 ml-4 text-white hover:bg-[#hbd255f]
+                            hover:text-white transtion-all duration-75 delay-100'>
 
-                    {/* <div className='text-sm bg-gradient justify-center ml-4
-                    rounded-full text-white'>NFT counter</div> */}
+                                <span className='text-sm font-bold'>{nfts.length}/50</span>
+                            </div>
+                    <div className='text-sm font-bold bg-gradient justify-center ml-4
+                    rounded-full text-white'>NFT counter</div>
             </div>
     </div>
   )

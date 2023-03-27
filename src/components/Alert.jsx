@@ -1,7 +1,6 @@
-import { useGlobalState } from '../store'
 import { FaRegTimesCircle } from 'react-icons/fa'
 import { BsCheck2Circle } from 'react-icons/bs'
-
+import { useGlobalState } from '../store'
 
 const Alert = () => {
   const [alert] = useGlobalState('alert')
