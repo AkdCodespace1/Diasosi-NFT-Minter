@@ -21,7 +21,7 @@ David Akande Oluwagbenga
 TECHNICAL STACK/TECHNOLOGIES:
 
 
-React, Tailwind CSS, Hardhat, Ethers Js, Node Js, Solidity, Goerli Testnet
+React, Tailwind CSS, Hardhat, Ethers Js, Node Js, Solidity, IPFS, Goerli Testnet
 
 
 DAPP USAGE AND GENERAL TOUR:
@@ -29,10 +29,18 @@ DAPP USAGE AND GENERAL TOUR:
 The dApp is simple and straight forward to use;
 When you load the dApp, it immediately prompts you to connect wallet
 
-The dApp has a "Connect Wallet" button at the top right corner of the page, there you connect your Ethereum wallet as a means of authentication
-It also has a "Mint NFT" button which performs the minting function in the dApp
-Then "More NFTs" button which displays all the minted NFTs in a pre-formatted grid manner. 
-Then there’s a counter that takes record of already minted NFTs
+ The dApp has a "Connect Wallet" button at the top right corner of the page, there you connect your Ethereum wallet as a means of authentication
+ It also has a "Mint NFT" button which performs the minting function in the dApp
+ The minted NFT is displayed in the "YOUR NFT" section of the page 
+
+ Please note that the images to be minted have been pre-processed and stored in a decentralized file storage facility called Interplanetary File System (IPFS) with it's unique hash in the storage location so every image will be fetched uniquely 
+
+ Please note very importantly too that addressing the former problem of not seeing what you minting, the new version of the dApp allows the minter 
+to see the Artwork to be minted on the frontend immediately the "Mint NFT" button is clicked and that gives the signer the opportunity to sign the 
+transaction or reject it. 
+
+ Note also that the "More NFT" button was taken down because it is not required for this version of the dApp as the only Art to be minted per time 
+is what is neede to be dispalyed on the frontend.
 
 
 INTERACTING WITH THE dApp:

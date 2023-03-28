@@ -1,18 +1,21 @@
 import { setAlert, setGlobalState, useGlobalState } from '../store'
 import { safeMint } from '../Diasosi'
 
-const Hero = () => {
+const Hero = ({handleClick}) => {
   const [nfts] = useGlobalState('nfts')
   const onMintNFT = async () => {
+    handleClick()
     // setGlobalState('Loading', {
     //   show: true,
     //   msg: 'Minting your NFT into your wallet.',
+      
     // })
-
-    await safeMint()
-      // .then(() => setAlert('Minting successful...', 'green'))
-      // .catch(() => setGlobalState('loading', {show: false, msg: ''}))
-  }
+    //     console.log("balablu", nfts)
+    await clickToMint()
+  //   console.log("balablu", nfts)
+  //     .then(() => setAlert('Minting successful...', 'green'))
+  //     .catch(() => setGlobalState( {show: false, msg: ''}))
+   }
   
   return (
     <div className="bg-[url('https://images.pexels.com/photos/2149422/pexels-photo-2149422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]

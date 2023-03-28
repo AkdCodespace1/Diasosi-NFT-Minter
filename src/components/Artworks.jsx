@@ -1,11 +1,11 @@
 import ethlogo from '../assets/ethlogo.png'
 import { useEffect, useState } from 'react'
-import { useGlobalState } from '../store'
 
 
 
-const Artworks = ({ artworks }) => {    
+const Artworks = ({ artworks, images, currentIndex }) => {    
    const [end, setEnd] = useState(4)
+   const [showImage, setShowImage] = useState(null)
    const [count] = useState(4) 
    const [nfts, setNfts] = useState([]) 
 
@@ -23,8 +23,9 @@ const Artworks = ({ artworks }) => {
             <h4 className='text-gradient text-2xl'>NFTs</h4>
 
             <div className='flex flex-wrap justify-center items-center mt-4'>
+            <img src={images[currentIndex]} />
               {nfts.map((nft, i) => (
-              <img
+              <a
               href={nft.url}
               target="_blank"
               key={i}
@@ -56,7 +57,7 @@ const Artworks = ({ artworks }) => {
                           //{nft.cost}
                         </div>
                         </div>
-                        </img>
+                        </a>
                 ))}
             </div>
 
